@@ -421,7 +421,7 @@ namespace NekoGui {
             inboundObj["tag"] = "tun-in";
             inboundObj["type"] = "tun";
             inboundObj["interface_name"] = genTunName();
-            inboundObj["auto_route"] = true;
+            inboundObj["auto_route"] = false;
             inboundObj["endpoint_independent_nat"] = true;
             inboundObj["mtu"] = dataStore->vpn_mtu;
             inboundObj["stack"] = Preset::SingBox::VpnImplementation.value(dataStore->vpn_implementation);
