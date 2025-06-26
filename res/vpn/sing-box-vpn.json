@@ -65,7 +65,7 @@
             "inet4_address": "172.19.0.1/28",
             //%IPV6_ADDRESS%
             "mtu": %MTU%,
-            "auto_route": true,
+            "auto_route": false,
             "strict_route": %STRICT_ROUTE%,
             "stack": "%STACK%",
             "endpoint_independent_nat": true,
