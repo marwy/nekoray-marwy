@@ -135,6 +135,12 @@ private slots:
 
     void on_tabWidget_currentChanged(int index);
 
+    void on_menu_open_config_folder_triggered();
+
+    void on_menu_restart_program_triggered();
+
+    void on_toolButton_AppProxy_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSystemTrayIcon *tray;

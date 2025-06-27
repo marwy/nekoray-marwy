@@ -276,6 +276,7 @@ namespace NekoGui {
         _add(new configItem("sub_auto_update", &sub_auto_update, itemType::integer));
         _add(new configItem("log_ignore", &log_ignore, itemType::stringList));
         _add(new configItem("start_minimal", &start_minimal, itemType::boolean));
+        _add(new configItem("app_proxy_list", &app_proxy_list, itemType::string));
         _add(new configItem("max_log_line", &max_log_line, itemType::integer));
         _add(new configItem("splitter_state", &splitter_state, itemType::string));
         _add(new configItem("utlsFingerprint", &utlsFingerprint, itemType::string));

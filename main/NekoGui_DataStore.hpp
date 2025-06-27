@@ -91,6 +91,9 @@ namespace NekoGui {
         bool flag_reorder = false;
 
         // Saved
+        
+        // App Proxy
+        QString app_proxy_list = "";
 
         // Misc
         QString log_level = "info";

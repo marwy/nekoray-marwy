@@ -168,6 +168,10 @@ set(PROJECT_SOURCES
         ui/mainwindow.h
         ui/mainwindow.ui
 
+        ui/dialog_app_proxy.h
+        ui/dialog_app_proxy.cpp
+        ui/dialog_app_proxy.ui
+
         ui/edit/dialog_edit_profile.h
         ui/edit/dialog_edit_profile.cpp
         ui/edit/dialog_edit_profile.ui
@@ -300,3 +304,22 @@ target_link_libraries(nekobox PRIVATE
 if (QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(nekobox)
 endif ()
+
+# Install
+nkr_install_target(nekobox)
+nkr_install_qt_dependencies(nekobox)
+
+if(WIN32)
+    set(PROXYCHAINS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/proxychains)
+    set(PROXYCHAINS_EXE ${PROXYCHAINS_DIR}/proxychains_win32_x64.exe)
+    set(PROXYCHAINS_HOOK_X64 ${PROXYCHAINS_DIR}/proxychains_hook_x64.dll)
+    set(PROXYCHAINS_HOOK_X86 ${PROXYCHAINS_DIR}/proxychains_hook_x86.dll)
+
+    add_custom_command(
+        TARGET nekobox POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${PROXYCHAINS_EXE} $<TARGET_FILE_DIR:nekobox>/proxychains.exe
+        COMMAND ${CMAKE_COMMAND} -E copy ${PROXYCHAINS_HOOK_X64} $<TARGET_FILE_DIR:nekobox>/proxychains_hook_x64.dll
+        COMMAND ${CMAKE_COMMAND} -E copy ${PROXYCHAINS_HOOK_X86} $<TARGET_FILE_DIR:nekobox>/proxychains_hook_x86.dll
+        COMMENT "Copying proxychains files"
+    )
+endif()

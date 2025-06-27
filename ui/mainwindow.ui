@@ -47,6 +47,26 @@
        </widget>
       </item>
       <item>
+       <widget class="QToolButton" name="toolButton_AppProxy">
+        <property name="text">
+         <string>App Proxy</string>
+        </property>
+        <property name="icon">
+         <iconset theme="b-internet-web-browser">
+          <normaloff>.</normaloff>.</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QToolButton" name="toolButton_preferences">
         <property name="text">
          <string>Preferences</string>

@@ -16,6 +16,7 @@
 #include "ui/dialog_manage_routes.h"
 #include "ui/dialog_vpn_settings.h"
 #include "ui/dialog_hotkey.h"
+#include "ui/dialog_app_proxy.h"
 
 #include "3rdparty/fix_old_qt.h"
 #include "3rdparty/qrcodegen.hpp"
@@ -622,6 +623,11 @@ void MainWindow::on_menu_vpn_settings_triggered() {
 
 void MainWindow::on_menu_hotkey_settings_triggered() {
     USE_DIALOG(DialogHotkey)
+}
+
+void MainWindow::on_toolButton_AppProxy_clicked()
+{
+    USE_DIALOG(DialogAppProxy)
 }
 
 void MainWindow::on_commitDataRequest() {
